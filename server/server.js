@@ -21,10 +21,12 @@ const io = new Server(server, {
 
 io.on('connection', (socket) => {
     socket.on('join_room', (data) => {
+        console.log('join');
         const { username, room } = data;
         socket.join(room);
-
+        
         const createdTime = Date.now();
+        socket.on('disconnect', () => console.log(`${username} leave the room `));
 
         socket.to(room).emit('receive_message', {
             message: `${username} has joined the room chat`,
@@ -46,8 +48,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('send-message', (data) => {
-        io.emit(data);
-        // console.log(data);
+        socket.emit('receive-message', data);
     });
 });
 

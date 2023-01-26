@@ -4,9 +4,10 @@ import upperFirstLetter from '../utilities/upperFirstLetter'
 type LeftBarProps = {
     username:string
     socket:any
+    leaveRoom:any
 }
 
-export default function LeftBar({username,socket}:LeftBarProps) {
+export default function LeftBar({username,socket,leaveRoom}:LeftBarProps) {
 
     //sampai sini
 
@@ -21,6 +22,6 @@ export default function LeftBar({username,socket}:LeftBarProps) {
                 <span>bayu</span>
             </section>
         </article>
-        <button className='rounded bg-red-500 px-4 py-1 mx-7 hover:bg-red-700'>LEAVE</button>
+        <button className='rounded bg-red-500 px-4 py-1 mx-7 hover:bg-red-700' onClick={leaveRoom}>LEAVE</button>
     </section>
 }

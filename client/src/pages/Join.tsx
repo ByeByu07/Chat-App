@@ -26,7 +26,7 @@ export default function Join({username, setUsername, room, setRoom, socket}:Join
         <input type="text" placeholder='Username' value={username} onChange={(e)=>setUsername(e.target.value)}/>
         {/* <input type="number" placeholder='code' value={room} onChange={(e)=> setRoom(e.target.value)}/> */}
         <select value={room} onChange={e => setRoom(e.target.value)}>
-          <option value=""></option>
+          <option value="public">public</option>
           <option value="asparagus">Asparagus</option>
           <option value="astagaaa">Astaga</option>
         </select>

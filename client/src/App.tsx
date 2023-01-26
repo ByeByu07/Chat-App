@@ -10,7 +10,7 @@ const socket = io('http://localhost:4000');
 export default function App() {
 
   const [username,setUsername] = useState('');
-  const [room,setRoom] = useState('');
+  const [room,setRoom] = useState('public');
 
 
   return <Routes>
