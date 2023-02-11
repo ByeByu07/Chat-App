@@ -52,6 +52,6 @@ io.on('connection', (socket) => {
     });
 });
 
-express.get('/', (req, res) => res.send('halo'));
+express.get('/:room', (req, res) => res.send('halo'));
 
 server.listen(process.env.SERVER_PORT, () => console.log(`Berjalan pada url http://localhost:${process.env.SERVER_PORT}`));
